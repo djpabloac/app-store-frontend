@@ -1,11 +1,11 @@
 import Layout from "../components/Layout"
 
-const Order = () => {
+const Product = () => {
   return (
     <Layout>
-      <h1>Order</h1>
+      <h1>Orders</h1>
     </Layout>
   )
 }
 
-export default Order
+export default Product

@@ -1,7 +1,7 @@
 import {
     useQuery
   } from '@tanstack/react-query'
-  import { Response } from '../types/client';
+  import { Response } from '../types/product';
   
   export const useProduct = () => {
     const dataQuery = useQuery({

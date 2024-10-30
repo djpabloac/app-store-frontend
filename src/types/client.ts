@@ -1,6 +1,6 @@
-export interface Response {
+export interface Response<T> {
   success: boolean
-  data: Client[]
+  data: T
 }
 
 export interface Client {

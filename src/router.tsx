@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import ClientPage from './pages/Client'
+import ClientDetailPage from './pages/ClientDetail'
+import ClientNewPage from './pages/ClientNew'
 import ProductPage from "./pages/Product";
 import OrderPage from "./pages/Order";
 import Navbar from "./components/Navbar";
@@ -15,16 +17,28 @@ const router = createBrowserRouter([
         element: <MainPage />
       },
       {
-        index: true,
-        path: '/clients',
-        element: <ClientPage />
+        path: 'clients',
+        children: [
+          {
+            path: '',
+            element: <ClientPage />
+          },
+          {
+            path: ':id/detail',
+            element: <ClientDetailPage />
+          },
+          {
+            path: 'new',
+            element: <ClientNewPage />
+          }
+        ],
       },
       {
-        path: '/products',
+        path: 'products',
         element: <ProductPage />
       },
       {
-        path: '/orders',
+        path: 'orders',
         element: <OrderPage />
       }
     ]

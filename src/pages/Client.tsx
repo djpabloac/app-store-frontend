@@ -2,6 +2,7 @@ import { Box, LinearProgress, Typography } from '@mui/material'
 import Layout from '../components/Layout'
 import ClientCard from '../components/client/ClientCard'
 import { useClient } from '../hook/useClient'
+import CardNew from '../components/commons/CardNew'
 
 const Client = () => {
   const { isPending, ...clients } = useClient()
@@ -21,17 +22,18 @@ const Client = () => {
         gap: 1
       }}>
         {
-          !clients?.data?.data && (
-            <Typography>No hay clientes</Typography>
+          !clients?.data && (
+            <Typography variant="h4">No hay clientes</Typography>
           )
         }
         {
-          clients?.data?.data && clients.data.data.map((item, index) => (
+          clients?.data && clients.data.map((item, index) => (
             <ClientCard
               key={`client-card-${index}`}
               item={item} />
           ))
         }
+        <CardNew href='/clients/new' />
       </Box>
     </Layout>
   )
